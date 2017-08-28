@@ -76,7 +76,7 @@ emmm,在一篇教程下终于建好了blog，gtmd macOS，一个文件让我找�
 
     </header>
     <div id="container">
-      <div id="main" class="my blog" itemscope itemprop="blogPost">
+      <div id="main" class="post" itemscope itemprop="blogPost">
 	<article itemprop="articleBody"> 
 		<header class="article-info clearfix">
   <h1 itemprop="name">
@@ -89,7 +89,7 @@ emmm,在一篇教程下终于建好了blog，gtmd macOS，一个文件让我找�
     </p>
   <p class="article-time">
     <time datetime="2017-08-25T01:00:35.000Z" itemprop="datePublished">2017-08-25</time>
-    Updated:<time datetime="2017-08-27T09:06:57.000Z" itemprop="dateModified">2017-08-27</time>
+    Updated:<time datetime="2017-08-28T03:34:09.000Z" itemprop="dateModified">2017-08-28</time>
     
   </p>
 </header>
@@ -119,19 +119,6 @@ emmm,在一篇教程下终于建好了blog，gtmd macOS，一个文件让我找�
 </footer>   	       
 	</article>
 	
-<nav class="article-nav clearfix">
- 
- <div class="prev" >
- <a href="/2017/08/27/about/" title="about me">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  about me</span>
-</a>
-</div>
-
-
-</nav>
-
 	
 <section class="comment">
 	
@@ -142,6 +129,11 @@ emmm,在一篇教程下终于建好了blog，gtmd macOS，一个文件让我找�
 
 </div>  
       <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#博客建立完工"><span class="toc-number">1.</span> <span class="toc-text">博客建立完工</span></a></li></ol>
+  </div>
 
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
@@ -179,8 +171,8 @@ emmm,在一篇教程下终于建好了blog，gtmd macOS，一个文件让我找�
 
 </aside>
 </div>
-  </div>
-  <footer><div id="footer" >
+    </div>
+    <footer><div id="footer" >
     
             <p class="copyright"> © 2017 
 		
@@ -270,6 +262,46 @@ $(document).ready(function(){
 </script>
 
 
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:""};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
 
 
 
@@ -358,5 +390,5 @@ ga('send', 'pageview');
 
 
   </body>
- </html>
+</html>
 
