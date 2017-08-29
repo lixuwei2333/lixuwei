@@ -12,15 +12,15 @@
     
     <meta name="author" content="lxw">
     
-    <meta name="description" content="python入门爬虫实现
-python是一门优秀的数据处理语言，这是我学习python时做的一个小爬虫。说是爬虫，其实连基本的组成部分都不全，不过权当入门了。
+    <meta name="description" content="python是一门优秀的数据处理语言，这是我学习python时做的一个小爬虫。说是爬虫，其实连基本的组成部分都不全，不过权当入门了。
 
 
 
 作用：下载指定网址上的图片
 
 
-测试结果:1234567891011121314151617181920212223import re">
+
+测试结果:1234567891011121314151617181920212223import reimport urlli">
     
     
     
@@ -96,7 +96,7 @@ python是一门优秀的数据处理语言，这是我学习python时做的一�
     </p>
   <p class="article-time">
     <time datetime="2017-08-29T12:36:51.000Z" itemprop="datePublished">2017-08-29</time>
-    Updated:<time datetime="2017-08-29T12:53:08.000Z" itemprop="dateModified">2017-08-29</time>
+    Updated:<time datetime="2017-08-29T13:13:25.000Z" itemprop="dateModified">2017-08-29</time>
     
   </p>
 </header>
@@ -105,10 +105,10 @@ python是一门优秀的数据处理语言，这是我学习python时做的一�
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#python入门爬虫实现"><span class="toc-number">1.</span> <span class="toc-text">python入门爬虫实现</span></a></li></ol>
+		
 		</div>
 		
-		<h1 id="python入门爬虫实现"><a href="#python入门爬虫实现" class="headerlink" title="python入门爬虫实现"></a>python入门爬虫实现</h1><blockquote>
+		<blockquote>
 <p>python是一门优秀的数据处理语言，这是我学习python时做的一个小爬虫。<br>说是爬虫，其实连基本的组成部分都不全，不过权当入门了。</p>
 </blockquote>
 <hr>
@@ -116,7 +116,9 @@ python是一门优秀的数据处理语言，这是我学习python时做的一�
 <p>作用：下载指定网址上的图片</p>
 </blockquote>
 <hr>
-<p>测试结果:<img src="http://img.blog.csdn.net/20170720162712224?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzAzNTgxMjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="misaka"><br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> re</div><div class="line"><span class="keyword">import</span> urllib</div><div class="line"><span class="keyword">import</span> urllib.request</div><div class="line">def gethtml(url):                    #获取网页源代码</div><div class="line">    web = urllib.request.urlopen(url)</div><div class="line">    html = web.read()</div><div class="line">    <span class="keyword">return</span> html</div><div class="line"></div><div class="line"></div><div class="line">def getpng(html):</div><div class="line">    reg = r'src=<span class="string">"(https://imgsa.baidu.com/forum/w%3D580/.*?\.jpg)'   #正则表达式</span></div><div class="line"><span class="string">    re1 = re.compile(reg,re.I)</span></div><div class="line"><span class="string">    x = 1</span></div><div class="line"><span class="string">    imglist = re1.findall(html)</span></div><div class="line"><span class="string">    for imgurl in imglist:</span></div><div class="line"><span class="string">        urllib.request.urlretrieve(imgurl,'%s.png' %x)     #默认保存路径在程序所在位置</span></div><div class="line"><span class="string">        x += 1</span></div><div class="line"><span class="string">    return imglist</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">website = 'https://tieba.baidu.com/p/4595130275?pn=5'      #在这里更改您想要爬取的网页</span></div><div class="line"><span class="string">html = str(gethtml(str(website)))</span></div><div class="line"><span class="string">getpng(html)</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>测试结果:<img src="http://img.blog.csdn.net/20170720162712224?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzAzNTgxMjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="misaka"><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> re</div><div class="line"><span class="keyword">import</span> urllib</div><div class="line"><span class="keyword">import</span> urllib.request</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">gethtml</span><span class="params">(url)</span>:</span>                    <span class="comment">#获取网页源代码</span></div><div class="line">    web = urllib.request.urlopen(url)</div><div class="line">    html = web.read()</div><div class="line">    <span class="keyword">return</span> html</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">getpng</span><span class="params">(html)</span>:</span></div><div class="line">    reg = <span class="string">r'src="(https://imgsa.baidu.com/forum/w%3D580/.*?\.jpg)'</span>   <span class="comment">#正则表达式</span></div><div class="line">    re1 = re.compile(reg,re.I)</div><div class="line">    x = <span class="number">1</span></div><div class="line">    imglist = re1.findall(html)</div><div class="line">    <span class="keyword">for</span> imgurl <span class="keyword">in</span> imglist:</div><div class="line">        urllib.request.urlretrieve(imgurl,<span class="string">'%s.png'</span> %x)     <span class="comment">#默认保存路径在程序所在位置</span></div><div class="line">        x += <span class="number">1</span></div><div class="line">    <span class="keyword">return</span> imglist</div><div class="line"></div><div class="line"></div><div class="line">website = <span class="string">'https://tieba.baidu.com/p/4595130275?pn=5'</span>      <span class="comment">#在这里更改您想要爬取的网页</span></div><div class="line">html = str(gethtml(str(website)))</div><div class="line">getpng(html)</div></pre></td></tr></table></figure></p>
+</blockquote>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -164,7 +166,7 @@ python是一门优秀的数据处理语言，这是我学习python时做的一�
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#python入门爬虫实现"><span class="toc-number">1.</span> <span class="toc-text">python入门爬虫实现</span></a></li></ol>
+  
   </div>
 
 <div id="asidepart">
