@@ -7,13 +7,21 @@
   <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8" />
 <meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88" />
   
-    <title>my blog | The blog of Lxw</title>
+    <title>python入门爬虫实现 | The blog of Lxw</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="lxw">
     
-    <meta name="description" content="博客建立完工
-emmm,在一篇教程下终于建好了blog，gtmd macOS，一个文件让我找了好长时间。插件什么的还是要继续搞啊，先去clone点主题，然后弄评论区(然而并没有什么用)。">
+    <meta name="description" content="#python入门爬虫实现
+
+python是一门优秀的数据处理语言，这是我学习python时做的一个小爬虫。说是爬虫，其实连基本的组成部分都不全，不过权当入门了。
+
+
+
+作用：下载指定网址上的图片
+
+
+测试结果:1234567891011121314151617181920212223import ">
     
     
     
@@ -81,15 +89,15 @@ emmm,在一篇教程下终于建好了blog，gtmd macOS，一个文件让我找�
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/08/25/blog/" title="my blog" itemprop="url">my blog</a>
+      <a href="/2017/08/29/python入门爬虫实现/" title="python入门爬虫实现" itemprop="url">python入门爬虫实现</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="lxw">lxw</a>
     </p>
   <p class="article-time">
-    <time datetime="2017-08-25T01:00:35.000Z" itemprop="datePublished">2017-08-25</time>
-    Updated:<time datetime="2017-08-29T12:07:09.000Z" itemprop="dateModified">2017-08-29</time>
+    <time datetime="2017-08-29T12:36:51.000Z" itemprop="datePublished">2017-08-29</time>
+    Updated:<time datetime="2017-08-29T12:48:53.000Z" itemprop="dateModified">2017-08-29</time>
     
   </p>
 </header>
@@ -98,21 +106,34 @@ emmm,在一篇教程下终于建好了blog，gtmd macOS，一个文件让我找�
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#博客建立完工"><span class="toc-number">1.</span> <span class="toc-text">博客建立完工</span></a></li></ol>
+		
 		</div>
 		
-		<h1 id="博客建立完工"><a href="#博客建立完工" class="headerlink" title="博客建立完工"></a>博客建立完工</h1><hr>
-<p>emmm,在一篇教程下终于建好了blog，gtmd macOS，一个文件让我找了好长时间。<br>插件什么的还是要继续搞啊，先去clone点主题，然后弄评论区(然而并没有什么用)。<br><img src="/img/misaka2.jpg" alt="cmd-markdown-logo"></p>
+		<p>#python入门爬虫实现</p>
+<blockquote>
+<p>python是一门优秀的数据处理语言，这是我学习python时做的一个小爬虫。<br>说是爬虫，其实连基本的组成部分都不全，不过权当入门了。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>作用：下载指定网址上的图片</p>
+</blockquote>
+<hr>
+<p>测试结果:<img src="http://img.blog.csdn.net/20170720162712224?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzAzNTgxMjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="misaka"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">import re</div><div class="line">import urllib</div><div class="line">import urllib.request</div><div class="line">def gethtml(url):                    #获取网页源代码</div><div class="line">    web = urllib.request.urlopen(url)</div><div class="line">    html = web.read()</div><div class="line">    return html</div><div class="line"></div><div class="line"></div><div class="line">def getpng(html):</div><div class="line">    reg = r&apos;src=&quot;(https://imgsa.baidu.com/forum/w%3D580/.*?\.jpg)&apos;   #正则表达式</div><div class="line">    re1 = re.compile(reg,re.I)</div><div class="line">    x = 1</div><div class="line">    imglist = re1.findall(html)</div><div class="line">    for imgurl in imglist:</div><div class="line">        urllib.request.urlretrieve(imgurl,&apos;%s.png&apos; %x)     #默认保存路径在程序所在位置</div><div class="line">        x += 1</div><div class="line">    return imglist</div><div class="line"></div><div class="line"></div><div class="line">website = &apos;https://tieba.baidu.com/p/4595130275?pn=5&apos;      #在这里更改您想要爬取的网页</div><div class="line">html = str(gethtml(str(website)))</div><div class="line">getpng(html)</div></pre></td></tr></table></figure></p>
   
 	</div>
 		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/python/">python</a>
+  </div>
 
 
 
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2017/08/25/blog/" data-title="my blog | The blog of Lxw" data-tsina="" class="share clearfix">
+  <div data-url="http://yoursite.com/2017/08/29/python入门爬虫实现/" data-title="python入门爬虫实现 | The blog of Lxw" data-tsina="" class="share clearfix">
   </div>
 
 </div>
@@ -121,21 +142,21 @@ emmm,在一篇教程下终于建好了blog，gtmd macOS，一个文件让我找�
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/08/29/python入门爬虫实现/" title="python入门爬虫实现">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  python入门爬虫实现</span>
+
+<div class="next">
+<a href="/2017/08/25/blog/"  title="my blog">
+ <strong>NEXT:</strong><br/> 
+ <span>my blog
+</span>
 </a>
 </div>
-
 
 </nav>
 
 	
 <section class="comment">
 	
-	<div class="ds-thread" data-title="my blog" data-thread-key="blog" data-author-key="lxw" data-url="http://yoursite.com/post/blog"></div>
+	<div class="ds-thread" data-title="python入门爬虫实现" data-thread-key="python入门爬虫实现" data-author-key="lxw" data-url="http://yoursite.com/post/python入门爬虫实现"></div>
 	
 </section>
 
@@ -145,7 +166,7 @@ emmm,在一篇教程下终于建好了blog，gtmd macOS，一个文件让我找�
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#博客建立完工"><span class="toc-number">1.</span> <span class="toc-text">博客建立完工</span></a></li></ol>
+  
   </div>
 
 <div id="asidepart">
