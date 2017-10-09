@@ -1,0 +1,433 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <meta name="baidu_union_verify" content="d1952c66cf48912e21c18c7c581f382a">
+  <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8" />
+<meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88" />
+  
+    <title>计算鞍点 | The blog of Lxw</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="lxw">
+    
+    <meta name="description" content="出现了致命bug
+思路：首先开权值数组，第一遍扫描找行最大值并权值+1，第二遍扫描找列最小值并权值+1，最后权值为2的点为鞍点。
+错误代码：12345678910111213141516171819202122232425262728293031323334353637383940414243444">
+    
+    
+    
+    
+    <link rel="alternate" href="atom.xml" title="The blog of Lxw" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/misaka1.ico">
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            var _bdId ='391982416296a0d54221f59fe35250d4';
+             hm.src = "//hm.baidu.com/hm.js?" + _bdId;
+             var s = document.getElementsByTagName("script")[0]; 
+             s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+     
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="The blog of Lxw" title="The blog of Lxw"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="The blog of Lxw">The blog of Lxw</a></h1>
+				<a class="blog-motto">或许有一度春风不负微草枯荣</a>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于我</a></li>
+					
+					<li>
+					
+                                            <form class="search" action=http://zhannei.baidu.com/cse/search target="_blank">
+                                            <label>Search</label>
+                                        <input name="s" type="hidden" value=  ><input type="text" name="q" size="30" placeholder="Search"><br>
+					
+					</li>
+				</ul>
+                            </nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/10/09/计算鞍点/" title="计算鞍点" itemprop="url">计算鞍点</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="lxw">lxw</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2017-10-09T09:36:51.000Z" itemprop="datePublished">2017-10-09</time>
+    Updated:<time datetime="2017-10-09T01:45:11.000Z" itemprop="dateModified">2017-10-09</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#出现了致命bug"><span class="toc-number">1.</span> <span class="toc-text">出现了致命bug</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#思路：首先开权值数组，第一遍扫描找行最大值并权值-1，第二遍扫描找列最小值并权值-1，最后权值为2的点为鞍点。"><span class="toc-number">2.</span> <span class="toc-text">思路：首先开权值数组，第一遍扫描找行最大值并权值+1，第二遍扫描找列最小值并权值+1，最后权值为2的点为鞍点。</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#错误代码："><span class="toc-number">3.</span> <span class="toc-text">错误代码：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#正确代码："><span class="toc-number">4.</span> <span class="toc-text">正确代码：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#bug：关于某行或列中有相同数字的情况，若相同数字为最大／最小值，错误代码会更新首先遇到的位置的权值，正确代码会更新所有相同数字位置的权值"><span class="toc-number">5.</span> <span class="toc-text">bug：关于某行或列中有相同数字的情况，若相同数字为最大／最小值，错误代码会更新首先遇到的位置的权值，正确代码会更新所有相同数字位置的权值</span></a></li></ol>
+		</div>
+		
+		<h1 id="出现了致命bug"><a href="#出现了致命bug" class="headerlink" title="出现了致命bug"></a>出现了致命bug</h1><hr>
+<h1 id="思路：首先开权值数组，第一遍扫描找行最大值并权值-1，第二遍扫描找列最小值并权值-1，最后权值为2的点为鞍点。"><a href="#思路：首先开权值数组，第一遍扫描找行最大值并权值-1，第二遍扫描找列最小值并权值-1，最后权值为2的点为鞍点。" class="headerlink" title="思路：首先开权值数组，第一遍扫描找行最大值并权值+1，第二遍扫描找列最小值并权值+1，最后权值为2的点为鞍点。"></a>思路：首先开权值数组，第一遍扫描找行最大值并权值+1，第二遍扫描找列最小值并权值+1，最后权值为2的点为鞍点。</h1><hr>
+<h1 id="错误代码："><a href="#错误代码：" class="headerlink" title="错误代码："></a>错误代码：</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdlib&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;ctime&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> T,s[<span class="number">200</span>][<span class="number">200</span>],i,j,sum,m,n,s2[<span class="number">200</span>][<span class="number">200</span>],flagx,flagy,maxx,minn,flag;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">   <span class="comment">// freopen("a.txt","r",stdin);</span></div><div class="line">    <span class="built_in">cin</span>&gt;&gt;m&gt;&gt;n;</div><div class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>;i &lt; m;i ++)</div><div class="line">    &#123;</div><div class="line">        maxx = <span class="number">-1e9</span>;</div><div class="line">        <span class="keyword">for</span>(j = <span class="number">0</span>;j &lt; n;j ++)</div><div class="line">        &#123;</div><div class="line">            <span class="built_in">cin</span> &gt;&gt; s[i][j];</div><div class="line">            <span class="keyword">if</span> (s[i][j] &gt; maxx)</div><div class="line">            &#123;</div><div class="line">                maxx = s[i][j];</div><div class="line">                flagx = i;</div><div class="line">                flagy = j;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        s2[flagx][flagy]++;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>(j = <span class="number">0</span>;j &lt; n;j ++)</div><div class="line">    &#123;</div><div class="line">        minn = <span class="number">1e9</span>;</div><div class="line">        <span class="keyword">for</span>(i = <span class="number">0</span>;i &lt; m;i ++)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span>(s[i][j] &lt; minn)</div><div class="line">            &#123;</div><div class="line">                minn = s[i][j];</div><div class="line">                flagx = i;</div><div class="line">                flagy = j;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        s2[flagx][flagy] ++;</div><div class="line">    &#125;</div><div class="line">    flag = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>;i &lt; m;i ++)</div><div class="line">        <span class="keyword">for</span>(j = <span class="number">0</span>; j &lt; n;j ++)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span>(s2[i][j]==<span class="number">2</span>)</div><div class="line">            &#123;</div><div class="line">                flagx = i;</div><div class="line">                flagy = j;</div><div class="line">                flag = <span class="number">1</span>;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line"></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    <span class="keyword">if</span>(flag) <span class="built_in">printf</span>(<span class="string">"Array[%d][%d]=%d"</span>,flagx,flagy,s[flagx][flagy]);</div><div class="line">    <span class="keyword">else</span> <span class="built_in">cout</span>&lt;&lt;<span class="string">"None"</span>;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">/***************************************************</span></div><div class="line"><span class="comment">User name: jk170513李绪伟</span></div><div class="line"><span class="comment">Result: Wrong Answer</span></div><div class="line"><span class="comment">Take time: 0ms</span></div><div class="line"><span class="comment">Take Memory: 272KB</span></div><div class="line"><span class="comment">Submit time: 2017-10-04 09:42:42</span></div><div class="line"><span class="comment">****************************************************/</span></div></pre></td></tr></table></figure>
+<hr>
+<h1 id="正确代码："><a href="#正确代码：" class="headerlink" title="正确代码："></a>正确代码：</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdlib&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;ctime&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> T,s[<span class="number">200</span>][<span class="number">200</span>],i,j,sum,m,n,s2[<span class="number">200</span>][<span class="number">200</span>],flagx,flagy,maxx,minn,flag;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">   <span class="comment">//  freopen("a.txt","r",stdin);</span></div><div class="line">    <span class="built_in">cin</span>&gt;&gt;m&gt;&gt;n;</div><div class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>;i &lt; m;i ++)</div><div class="line">    &#123;</div><div class="line">        maxx = <span class="number">-1e9</span>;</div><div class="line">        <span class="keyword">for</span>(j = <span class="number">0</span>;j &lt; n;j ++)</div><div class="line">        &#123;</div><div class="line">            <span class="built_in">cin</span> &gt;&gt; s[i][j];</div><div class="line">            maxx = max(s[i][j],maxx);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">for</span>(j = <span class="number">0</span>;j &lt; n;j ++)</div><div class="line">            <span class="keyword">if</span>(s[i][j] == maxx) s2[i][j]++;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>(j = <span class="number">0</span>;j &lt; n;j ++)</div><div class="line">    &#123;</div><div class="line">        minn = <span class="number">1e9</span>;</div><div class="line">        <span class="keyword">for</span>(i = <span class="number">0</span>;i &lt; m;i ++)</div><div class="line">            minn = min(s[i][j],minn);</div><div class="line">        <span class="keyword">for</span>(i = <span class="number">0</span>;i &lt; m;i ++)</div><div class="line">            <span class="keyword">if</span>(s[i][j] == minn) s2[i][j]++;</div><div class="line">    &#125;</div><div class="line">    flag = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>;i &lt; m;i ++)</div><div class="line">        <span class="keyword">for</span>(j = <span class="number">0</span>; j &lt; n;j ++)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span>(s2[i][j]==<span class="number">2</span>)</div><div class="line">            &#123;</div><div class="line">                flagx = i;</div><div class="line">                flagy = j;</div><div class="line">                flag = <span class="number">1</span>;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line"></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    <span class="keyword">if</span>(flag) <span class="built_in">printf</span>(<span class="string">"Array[%d][%d]=%d"</span>,flagx,flagy,s[flagx][flagy]);</div><div class="line">    <span class="keyword">else</span> <span class="built_in">cout</span>&lt;&lt;<span class="string">"None"</span>;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">/***************************************************</span></div><div class="line"><span class="comment">User name: jk170513李绪伟</span></div><div class="line"><span class="comment">Result: Accepted</span></div><div class="line"><span class="comment">Take time: 0ms</span></div><div class="line"><span class="comment">Take Memory: 216KB</span></div><div class="line"><span class="comment">Submit time: 2017-10-08 19:49:43</span></div><div class="line"><span class="comment">****************************************************/</span></div></pre></td></tr></table></figure>
+<hr>
+<h1 id="bug：关于某行或列中有相同数字的情况，若相同数字为最大／最小值，错误代码会更新首先遇到的位置的权值，正确代码会更新所有相同数字位置的权值"><a href="#bug：关于某行或列中有相同数字的情况，若相同数字为最大／最小值，错误代码会更新首先遇到的位置的权值，正确代码会更新所有相同数字位置的权值" class="headerlink" title="bug：关于某行或列中有相同数字的情况，若相同数字为最大／最小值，错误代码会更新首先遇到的位置的权值，正确代码会更新所有相同数字位置的权值"></a>bug：关于某行或列中有相同数字的情况，若相同数字为最大／最小值，错误代码会更新首先遇到的位置的权值，正确代码会更新所有相同数字位置的权值</h1>  
+	</div>
+		<footer class="article-footer clearfix">
+
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2017/10/09/计算鞍点/" data-title="计算鞍点 | The blog of Lxw" data-tsina="" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2017/08/29/python入门爬虫实现/"  title="python入门爬虫实现">
+ <strong>NEXT:</strong><br/> 
+ <span>python入门爬虫实现
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section class="comment">
+	
+	<div class="ds-thread" data-title="计算鞍点" data-thread-key="计算鞍点" data-author-key="lxw" data-url="http://yoursite.com/post/计算鞍点"></div>
+	
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#出现了致命bug"><span class="toc-number">1.</span> <span class="toc-text">出现了致命bug</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#思路：首先开权值数组，第一遍扫描找行最大值并权值-1，第二遍扫描找列最小值并权值-1，最后权值为2的点为鞍点。"><span class="toc-number">2.</span> <span class="toc-text">思路：首先开权值数组，第一遍扫描找行最大值并权值+1，第二遍扫描找列最小值并权值+1，最后权值为2的点为鞍点。</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#错误代码："><span class="toc-number">3.</span> <span class="toc-text">错误代码：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#正确代码："><span class="toc-number">4.</span> <span class="toc-text">正确代码：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#bug：关于某行或列中有相同数字的情况，若相同数字为最大／最小值，错误代码会更新首先遇到的位置的权值，正确代码会更新所有相同数字位置的权值"><span class="toc-number">5.</span> <span class="toc-text">bug：关于某行或列中有相同数字的情况，若相同数字为最大／最小值，错误代码会更新首先遇到的位置的权值，正确代码会更新所有相同数字位置的权值</span></a></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+<div id="authorInfo">
+	
+		<div class="author-logo"></div>		
+	
+	<div class="social-list" class="clearfix">
+		
+		
+		
+		<a href="https://github.com/lixuwei2333/lixuwei2333.github.io" target="_blank" title="github"></a>
+		
+		
+		
+		<a href="https://zhihu.com/people/eto-lxw/activities" target="_blank" title="zhihu"></a>
+		
+	</div>
+</div>
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/python/" title="python">python<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+      <li><a href="https://suxb201.github.io" target="_blank" title="苏晓斌dalao的博客">苏晓斌dalao</a></li>
+	<li><a href="http://kevinsyx.pw" target="_blank" title="syx的博客">syx</a></li>
+    </ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+  
+  <div class="tagcloudlist">
+    <p class="asidetitle">Tag Cloud</p>
+    <div class="tagcloudlist clearfix">
+       <a href="/tags/python/" style="font-size: 10px;">python</a>
+    </div>
+  </div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+    
+            <p class="copyright"> © 2017 
+		
+		<a href="http://yoursite.com" target="_blank" title="lxw">lxw</a>
+		
+            && Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> && Theme by <a href="http://gengbiao.me" target="_blank" title="coney">coney</a>
+            </div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:""};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+<script>
+    
+        var _bdImg = '4';
+    
+    window._bd_share_config={
+        "common":{
+            "bdSnsKey":{
+
+            },
+            "bdText":"",
+            "bdMini":"2",
+            "bdMiniList":[
+                "qzone",
+                "tsina",
+                "weixin",
+                "renren",
+                "tqq",
+                "tieba",
+                "douban",
+                "sqq",
+                "diandian",
+                "huaban",
+                "youdao",
+                "mail",
+                "ty",
+                "fbook",
+                "twi",
+                "linkedin",
+                "copy",
+                "print"
+            ],
+            "bdPic":"",
+            "bdStyle":"0",
+            "bdSize":"16"
+        },
+        "slide":{
+            "type":"slide",
+            "bdImg":_bdImg,
+            "bdPos":"right",
+            "bdTop":"350"
+        },
+        "image":{
+            "viewList":[
+                "weixin",
+                "qzone",
+                "tsina",
+                "renren",
+                "douban",
+                "tqq"
+            ],
+            "viewText":"分享：",
+            "viewSize":"16"
+        },
+        "selectShare":{
+            "bdContainerClass":null,
+            "bdSelectMiniList":[
+                "weixin",
+                "qzone",
+                "tsina",
+                "renren",
+                "douban",
+                "tqq"
+            ]
+        }
+    };
+    with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+
+
+
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', '', '');  
+ga('send', 'pageview');
+</script>
+
+
+  </body>
+</html>
+
