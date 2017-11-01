@@ -1,101 +1,26 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="">
+<html>
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
+    
+
+    
+
+    
 
 
 
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
+    <meta charset="utf-8">
     
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
+    
+    <title>The blog of Lxw | 或许有一度春风不负微草枯荣</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
     
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
-
-
-
-
-
-
-<meta name="description" content="欢迎来到lxw的博客">
+    <meta name="keywords" content="">
+    <meta name="description" content="欢迎来到lxw的博客">
 <meta property="og:type" content="website">
 <meta property="og:title" content="The blog of Lxw">
 <meta property="og:url" content="http://yoursite.com/index.html">
@@ -104,894 +29,481 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="The blog of Lxw">
 <meta name="twitter:description" content="欢迎来到lxw的博客">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
 
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '5.1.2',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/"/>
-
-
-
-
-
-  <title>The blog of Lxw</title>
-  
-
-
-
-
-
-
-
+    <!-- custom head -->
+    
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="">
+<body>
+    <div id="loading" class="active"></div>
 
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left 
-  page-home">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">The blog of Lxw</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">lxw</h5>
+          <a href="mailto:634206017@qq.com" title="634206017@qq.com" class="mail">634206017@qq.com</a>
+        </hgroup>
+      </div>
     </div>
-      
-        <p class="site-subtitle">或许有一度春风不负微草枯荣</p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Startseite
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/01/你的名字题解/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="lxw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="The blog of Lxw">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/01/你的名字题解/" itemprop="url">你的名字。</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-01T08:28:46+08:00">
-                2017-11-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>老师需要我写篇题解<br>题号3700</p>
-<h1 id="题意："><a href="#题意：" class="headerlink" title="题意："></a>题意：</h1><p>给定一个日期和对应的星期，求3年为星期几。</p>
-<h1 id="数据范围："><a href="#数据范围：" class="headerlink" title="数据范围："></a>数据范围：</h1><p>输入数据有多组(数据组数不超过 50000)，保证输入日期不含 2 月 29 日的情况，且其年份在 1900 到 2035 之间。</p>
-<h1 id="变量说明："><a href="#变量说明：" class="headerlink" title="变量说明："></a>变量说明：</h1><p>year,month,day,week 分别对应输入的年月日星期。</p>
-<h1 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h1><blockquote>
-<ul>
-<li>1.连续4年之中最多有1年为闰年</li>
-<li>2.从该日期到3年前跳跃了1095(365+365+365，没有经过2月29日)或1096(365*2+366，经过2月29日)天</li>
-<li>3.星期7天一循环，1095%7=3，1096%7=4，所以结果为week-3或week-4</li>
-<li>4.year-1或year-2为闰年时，恒经过2月29日，既week-4</li>
-<li>5.当year或year-3为闰年时，按month分情况讨论</li>
-</ul>
-</blockquote>
-<h1 id="特殊数据："><a href="#特殊数据：" class="headerlink" title="特殊数据："></a>特殊数据：</h1><p>当year为1903,1902等年份时，前3年加本年无闰年，此时经过1095天。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;ctime&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdlib&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">ly</span><span class="params">(<span class="keyword">int</span> year)</span>                     <span class="comment">//判断闰年</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="keyword">if</span>((year%<span class="number">400</span>==<span class="number">0</span>)||(year%<span class="number">4</span>==<span class="number">0</span>&amp;&amp;year%<span class="number">100</span>!=<span class="number">0</span>))</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">int</span> year,month,day,week,flag;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;year&gt;&gt;month&gt;&gt;day&gt;&gt;week)    <span class="comment">//读入数据</span></div><div class="line">    &#123;</div><div class="line">        flag = week;                      <span class="comment">//记录当前星期，为了处理4年无闰年的情况</span></div><div class="line">        <span class="keyword">if</span> (ly(year))                       <span class="comment">//当year为闰年时</span></div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span> (month &gt;= <span class="number">3</span>) week -= <span class="number">4</span>;       <span class="comment">//分类讨论</span></div><div class="line">            <span class="keyword">if</span> (month &lt;= <span class="number">2</span>) week -= <span class="number">3</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (ly(year - <span class="number">3</span>))                     <span class="comment">//当year-3为闰年时</span></div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span> (month &gt;= <span class="number">3</span>) week -= <span class="number">3</span>;        <span class="comment">//注意这里和上面不一样，自行思考</span></div><div class="line">            <span class="keyword">if</span> (month &lt;= <span class="number">2</span>) week -= <span class="number">4</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (ly(year<span class="number">-1</span>)||ly(year<span class="number">-2</span>))             <span class="comment">//当year-1或year-2为闰年时</span></div><div class="line">        &#123;</div><div class="line">            week -= <span class="number">4</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(week == flag) week -= <span class="number">3</span>; <span class="comment">//等价于当4年不存在闰年时(上面所有if条件都没触发)</span></div><div class="line">        <span class="keyword">if</span> (week &lt;= <span class="number">0</span>) week += <span class="number">7</span>;          <span class="comment">//防止week出现负数的必要处理</span></div><div class="line">        <span class="built_in">cout</span>&lt;&lt;week&lt;&lt;<span class="built_in">endl</span>;              <span class="comment">//输出week加换行符</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">/***************************************************</span></div><div class="line"><span class="comment">User name: jk170513李绪伟</span></div><div class="line"><span class="comment">Result: Accepted</span></div><div class="line"><span class="comment">Take time: 52ms</span></div><div class="line"><span class="comment">Take Memory: 204KB</span></div><div class="line"><span class="comment">Submit time: 2017-11-01 07:37:14</span></div><div class="line"><span class="comment">****************************************************/</span></div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/09/计算鞍点/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="lxw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="The blog of Lxw">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/09/计算鞍点/" itemprop="url">计算鞍点</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-09T17:36:51+08:00">
-                2017-10-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="出现了致命bug。"><a href="#出现了致命bug。" class="headerlink" title="出现了致命bug。"></a>出现了致命bug。</h1><h2 id="题目链接：http-acm-sdut-edu-cn-onlinejudge2-index-php-Home-Index-problemdetail-pid-1198-html"><a href="#题目链接：http-acm-sdut-edu-cn-onlinejudge2-index-php-Home-Index-problemdetail-pid-1198-html" class="headerlink" title="题目链接：http://acm.sdut.edu.cn/onlinejudge2/index.php/Home/Index/problemdetail/pid/1198.html"></a>题目链接：<a href="http://acm.sdut.edu.cn/onlinejudge2/index.php/Home/Index/problemdetail/pid/1198.html" target="_blank" rel="external">http://acm.sdut.edu.cn/onlinejudge2/index.php/Home/Index/problemdetail/pid/1198.html</a></h2><h1 id="思路：首先开权值数组，第一遍扫描找行最大值并权值-1，第二遍扫描找列最小值并权值-1，最后权值为2的点为鞍点。"><a href="#思路：首先开权值数组，第一遍扫描找行最大值并权值-1，第二遍扫描找列最小值并权值-1，最后权值为2的点为鞍点。" class="headerlink" title="思路：首先开权值数组，第一遍扫描找行最大值并权值+1，第二遍扫描找列最小值并权值+1，最后权值为2的点为鞍点。"></a>思路：首先开权值数组，第一遍扫描找行最大值并权值+1，第二遍扫描找列最小值并权值+1，最后权值为2的点为鞍点。</h1><hr>
-<h1 id="错误代码："><a href="#错误代码：" class="headerlink" title="错误代码："></a>错误代码：</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdlib&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;ctime&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> T,s[<span class="number">200</span>][<span class="number">200</span>],i,j,sum,m,n,s2[<span class="number">200</span>][<span class="number">200</span>],flagx,flagy,maxx,minn,flag;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">   <span class="comment">// freopen("a.txt","r",stdin);</span></div><div class="line">    <span class="built_in">cin</span>&gt;&gt;m&gt;&gt;n;</div><div class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>;i &lt; m;i ++)</div><div class="line">    &#123;</div><div class="line">        maxx = <span class="number">-1e9</span>;</div><div class="line">        <span class="keyword">for</span>(j = <span class="number">0</span>;j &lt; n;j ++)</div><div class="line">        &#123;</div><div class="line">            <span class="built_in">cin</span> &gt;&gt; s[i][j];</div><div class="line">            <span class="keyword">if</span> (s[i][j] &gt; maxx)</div><div class="line">            &#123;</div><div class="line">                maxx = s[i][j];</div><div class="line">                flagx = i;</div><div class="line">                flagy = j;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        s2[flagx][flagy]++;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>(j = <span class="number">0</span>;j &lt; n;j ++)</div><div class="line">    &#123;</div><div class="line">        minn = <span class="number">1e9</span>;</div><div class="line">        <span class="keyword">for</span>(i = <span class="number">0</span>;i &lt; m;i ++)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span>(s[i][j] &lt; minn)</div><div class="line">            &#123;</div><div class="line">                minn = s[i][j];</div><div class="line">                flagx = i;</div><div class="line">                flagy = j;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        s2[flagx][flagy] ++;</div><div class="line">    &#125;</div><div class="line">    flag = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>;i &lt; m;i ++)</div><div class="line">        <span class="keyword">for</span>(j = <span class="number">0</span>; j &lt; n;j ++)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span>(s2[i][j]==<span class="number">2</span>)</div><div class="line">            &#123;</div><div class="line">                flagx = i;</div><div class="line">                flagy = j;</div><div class="line">                flag = <span class="number">1</span>;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line"></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    <span class="keyword">if</span>(flag) <span class="built_in">printf</span>(<span class="string">"Array[%d][%d]=%d"</span>,flagx,flagy,s[flagx][flagy]);</div><div class="line">    <span class="keyword">else</span> <span class="built_in">cout</span>&lt;&lt;<span class="string">"None"</span>;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">/***************************************************</span></div><div class="line"><span class="comment">User name: jk170513李绪伟</span></div><div class="line"><span class="comment">Result: Wrong Answer</span></div><div class="line"><span class="comment">Take time: 0ms</span></div><div class="line"><span class="comment">Take Memory: 272KB</span></div><div class="line"><span class="comment">Submit time: 2017-10-04 09:42:42</span></div><div class="line"><span class="comment">****************************************************/</span></div></pre></td></tr></table></figure>
-<hr>
-<h1 id="正确代码："><a href="#正确代码：" class="headerlink" title="正确代码："></a>正确代码：</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdlib&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;ctime&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> T,s[<span class="number">200</span>][<span class="number">200</span>],i,j,sum,m,n,s2[<span class="number">200</span>][<span class="number">200</span>],flagx,flagy,maxx,minn,flag;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">   <span class="comment">//  freopen("a.txt","r",stdin);</span></div><div class="line">    <span class="built_in">cin</span>&gt;&gt;m&gt;&gt;n;</div><div class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>;i &lt; m;i ++)</div><div class="line">    &#123;</div><div class="line">        maxx = <span class="number">-1e9</span>;</div><div class="line">        <span class="keyword">for</span>(j = <span class="number">0</span>;j &lt; n;j ++)</div><div class="line">        &#123;</div><div class="line">            <span class="built_in">cin</span> &gt;&gt; s[i][j];</div><div class="line">            maxx = max(s[i][j],maxx);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">for</span>(j = <span class="number">0</span>;j &lt; n;j ++)</div><div class="line">            <span class="keyword">if</span>(s[i][j] == maxx) s2[i][j]++;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>(j = <span class="number">0</span>;j &lt; n;j ++)</div><div class="line">    &#123;</div><div class="line">        minn = <span class="number">1e9</span>;</div><div class="line">        <span class="keyword">for</span>(i = <span class="number">0</span>;i &lt; m;i ++)</div><div class="line">            minn = min(s[i][j],minn);</div><div class="line">        <span class="keyword">for</span>(i = <span class="number">0</span>;i &lt; m;i ++)</div><div class="line">            <span class="keyword">if</span>(s[i][j] == minn) s2[i][j]++;</div><div class="line">    &#125;</div><div class="line">    flag = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>;i &lt; m;i ++)</div><div class="line">        <span class="keyword">for</span>(j = <span class="number">0</span>; j &lt; n;j ++)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span>(s2[i][j]==<span class="number">2</span>)</div><div class="line">            &#123;</div><div class="line">                flagx = i;</div><div class="line">                flagy = j;</div><div class="line">                flag = <span class="number">1</span>;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line"></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    <span class="keyword">if</span>(flag) <span class="built_in">printf</span>(<span class="string">"Array[%d][%d]=%d"</span>,flagx,flagy,s[flagx][flagy]);</div><div class="line">    <span class="keyword">else</span> <span class="built_in">cout</span>&lt;&lt;<span class="string">"None"</span>;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">/***************************************************</span></div><div class="line"><span class="comment">User name: jk170513李绪伟</span></div><div class="line"><span class="comment">Result: Accepted</span></div><div class="line"><span class="comment">Take time: 0ms</span></div><div class="line"><span class="comment">Take Memory: 216KB</span></div><div class="line"><span class="comment">Submit time: 2017-10-08 19:49:43</span></div><div class="line"><span class="comment">****************************************************/</span></div></pre></td></tr></table></figure>
-<hr>
-<h1 id="bug：关于某行或列中有相同数字的情况，若相同数字为最大／最小值，错误代码会更新首先遇到的位置的权值，正确代码会更新所有相同数字位置的权值"><a href="#bug：关于某行或列中有相同数字的情况，若相同数字为最大／最小值，错误代码会更新首先遇到的位置的权值，正确代码会更新所有相同数字位置的权值" class="headerlink" title="bug：关于某行或列中有相同数字的情况，若相同数字为最大／最小值，错误代码会更新首先遇到的位置的权值，正确代码会更新所有相同数字位置的权值"></a>bug：关于某行或列中有相同数字的情况，若相同数字为最大／最小值，错误代码会更新首先遇到的位置的权值，正确代码会更新所有相同数字位置的权值</h1>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/29/python入门爬虫实现/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="lxw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="The blog of Lxw">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/29/python入门爬虫实现/" itemprop="url">python入门爬虫实现</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-29T20:36:51+08:00">
-                2017-08-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>python是一门优秀的数据处理语言，这是我学习python时做的一个小爬虫。<br>说是爬虫，其实连基本的组成部分都不全，不过权当入门了。</p>
-</blockquote>
-<hr>
-<blockquote>
-<p>作用：下载指定网址上的图片</p>
-</blockquote>
-<hr>
-<blockquote>
-<p>测试结果:<img src="http://img.blog.csdn.net/20170720162712224?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzAzNTgxMjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="misaka"></p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> re</div><div class="line"><span class="keyword">import</span> urllib</div><div class="line"><span class="keyword">import</span> urllib.request</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">gethtml</span><span class="params">(url)</span>:</span>                    <span class="comment">#获取网页源代码</span></div><div class="line">    web = urllib.request.urlopen(url)</div><div class="line">    html = web.read()</div><div class="line">    <span class="keyword">return</span> html</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">getpng</span><span class="params">(html)</span>:</span></div><div class="line">    reg = <span class="string">r'src="(https://imgsa.baidu.com/forum/w%3D580/.*?\.jpg)'</span>   <span class="comment">#正则表达式</span></div><div class="line">    re1 = re.compile(reg,re.I)</div><div class="line">    x = <span class="number">1</span></div><div class="line">    imglist = re1.findall(html)</div><div class="line">    <span class="keyword">for</span> imgurl <span class="keyword">in</span> imglist:</div><div class="line">        urllib.request.urlretrieve(imgurl,<span class="string">'%s.png'</span> %x)     <span class="comment">#默认保存路径在程序所在位置</span></div><div class="line">        x += <span class="number">1</span></div><div class="line">    <span class="keyword">return</span> imglist</div><div class="line"></div><div class="line"></div><div class="line">website = <span class="string">'https://tieba.baidu.com/p/4595130275?pn=5'</span>      <span class="comment">#在这里更改您想要爬取的网页</span></div><div class="line">html = str(gethtml(str(website)))</div><div class="line">getpng(html)</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/25/blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="lxw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="The blog of Lxw">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/25/blog/" itemprop="url">my blog</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-25T09:00:35+08:00">
-                2017-08-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="博客建立完工"><a href="#博客建立完工" class="headerlink" title="博客建立完工"></a>博客建立完工</h1><hr>
-<p>emmm,在一篇教程下终于建好了blog，gtmd macOS，一个文件让我找了好长时间。<br>插件什么的还是要继续搞啊，先去clone点主题，然后弄评论区(然而并没有什么用)。<br>感谢：sxb，syp，syy等人提供的帮助orz<br><img src="/img/misaka2.jpg" alt="cmd-markdown-logo"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
-
-
-          </div>
-          
-
-
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview sidebar-panel sidebar-panel-active">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="lxw" />
-          <p class="site-author-name" itemprop="name">lxw</p>
-           
-              <p class="site-description motion-element" itemprop="description">欢迎来到lxw的博客</p>
-          
-        </div>
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-            
-              <a href="/archives">
-            
-                <span class="site-state-item-count">4</span>
-                <span class="site-state-item-name">Artikel</span>
+            <li class="waves-block waves-effect active">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
               </a>
-            </div>
-          
-
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              
-                <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">Tags</span>
-              
-            </div>
-          
-
-        </nav>
-
+            </li>
         
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/yscoder" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com/ysweb" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
 
-        <div class="links-of-author motion-element">
-          
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">The blog of Lxw</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
         </div>
-
         
         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header index-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">The blog of Lxw</h1>
+        <h5 class="subtitle">
+            
+                或许有一度春风不负微草枯荣
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+<div class="container body-wrap">
+
+    <ul class="post-list">
+    
+        <li class="post-list-item fade">
+            <article id="post-你的名字题解"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017-11-01 08:28:46" datetime="2017-11-01T00:28:46.000Z"  itemprop="datePublished">2017-11-01</time>
 
         
-        
 
-        
-
-
-      </section>
-
-      
-
-      
 
     </div>
-  </aside>
 
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/11/01/你的名字题解/">你的名字。</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        老师需要我写篇题解题号3700
+题意：给定一个日期和对应的星期，求3年前为星期几。
+数据范围：输入数据有多组(数据组数不超过 50000)，保证输入日期不含 2 月 29 日的情况，且其年份在 1900 到 2035 之间。
+变量说明：year,month,day,week 分别对应输入的年月日星期。
+分析：
+
+1.连续4年之中最多有1年为闰年
+2.从该日期到3年前跳跃了1095(365+3...
+    
+
+        <a href="/2017/11/01/你的名字题解/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sdutoj/">sdutoj</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-计算鞍点"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017-10-09 17:36:51" datetime="2017-10-09T09:36:51.000Z"  itemprop="datePublished">2017-10-09</time>
 
         
-      </div>
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/10/09/计算鞍点/">计算鞍点</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        出现了致命bug。题目链接：http://acm.sdut.edu.cn/onlinejudge2/index.php/Home/Index/problemdetail/pid/1198.html思路：首先开权值数组，第一遍扫描找行最大值并权值+1，第二遍扫描找列最小值并权值+1，最后权值为2的点为鞍点。
+错误代码：12345678910111213141516171819202122232...
+    
+
+        <a href="/2017/10/09/计算鞍点/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sdutoj/">sdutoj</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-python入门爬虫实现"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017-08-29 20:36:51" datetime="2017-08-29T12:36:51.000Z"  itemprop="datePublished">2017-08-29</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/08/29/python入门爬虫实现/">python入门爬虫实现</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+python是一门优秀的数据处理语言，这是我学习python时做的一个小爬虫。说是爬虫，其实连基本的组成部分都不全，不过权当入门了。
+
+
+
+作用：下载指定网址上的图片
+
+
+
+测试结果:
+                
+                    
+                    
+                
+                misaka
+    ...
+    
+
+        <a href="/2017/08/29/python入门爬虫实现/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-blog"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017-08-25 09:00:35" datetime="2017-08-25T01:00:35.000Z"  itemprop="datePublished">2017-08-25</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/08/25/blog/">my blog</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        博客建立完工
+emmm,在一篇教程下终于建好了blog，gtmd macOS，一个文件让我找了好长时间。插件什么的还是要继续搞啊，先去clone点主题，然后弄评论区(然而并没有什么用)。感谢：sxb，syp，syy等人提供的帮助orz
+                
+                    
+                    
+                
+   ...
+    
+
+        <a href="/2017/08/25/blog/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+    </ul>
+
+    
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>lxw &copy; 2015 - 2017</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
     </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2017</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">lxw</span>
 
-  
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/&title=The blog of Lxw&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/&title=The blog of Lxw&source=欢迎来到lxw的博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=The blog of Lxw&url=http://yoursite.com/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/" alt="微信分享二维码">
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a></div>
-
-  <span class="post-meta-divider">|</span>
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
 
 
-        
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
 
 
 
 
 
 
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-        
-      </div>
-    </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
 
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
 </script>
 
 
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
-
-
-
-  
-  
-
-  
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
 </body>
 </html>
