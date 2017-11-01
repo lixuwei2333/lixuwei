@@ -200,7 +200,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -223,6 +223,141 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/01/你的名字题解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lxw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The blog of Lxw">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/01/你的名字题解/" itemprop="url">你的名字题解</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-01T08:28:46+08:00">
+                2017-11-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>老师需要我写篇题解<br>题号3700<br>题意：<br>给定一个日期和对应的星期，求3年为星期几。</p>
+<p>数据范围：<br>输入数据有多组(数据组数不超过 50000)，保证输入日期不含 2 月 29 日的情况，且其年份在 1900 到 2035 之间。</p>
+<p>变量说明：<br>year,month,day,week 分别对应输入的年月日星期。</p>
+<p>分析：<br>1.连续4年之中最多有1年为闰年<br>2.从该日期到3年前跳跃了1095(365+365+365，没有经过2月29日)或1096(365*2+366，经过2月29日)天<br>3.星期7天一循环，1095%7=3，1096%7=4，所以结果为week-3或week-4<br>4.year-1或year-2为闰年时，恒经过2月29日，既week-4<br>5.当year或year-3为闰年时，按month分情况讨论</p>
+<p>特殊数据：<br>当year为1903,1902等年份时，前3年加本年无闰年，此时经过1095天。<br>‘’’ c++</p>
+<p>#include<iostream></iostream></p>
+<p>#include<cstdio></cstdio></p>
+<p>#include<cmath></cmath></p>
+<p>#include<ctime></ctime></p>
+<p>#include<cstdlib></cstdlib></p>
+<p>#include<algorithm></algorithm></p>
+<p>#include<vector></vector></p>
+<p>#include<queue></queue></p>
+<p>#include<map></map></p>
+<p>#include<cstring><br>using namespace std;<br>int ly(int year)                     //判断闰年<br>{<br>    if((year%400==0)||(year%4==0&amp;&amp;year%100!=0))<br>        return 1;<br>    else return 0;<br>}<br>int year,month,day,week,flag;<br>int main()<br>{<br>    while(cin&gt;&gt;year&gt;&gt;month&gt;&gt;day&gt;&gt;week)    //读入数据<br>    {<br>        flag = week;                      //记录当前星期，为了处理4年无闰年的情况<br>        if (ly(year))                       //当year为闰年时<br>        {<br>            if (month &gt;= 3) week -= 4;       //分类讨论<br>            if (month &lt;= 2) week -= 3;<br>        }<br>        if (ly(year - 3))                     //当year-3为闰年时<br>        {<br>            if (month &gt;= 3) week -= 3;        //注意这里和上面不一样，自行思考<br>            if (month &lt;= 2) week -= 4;<br>        }<br>        if (ly(year-1)||ly(year-2))             //当year-1或year-2为闰年时<br>        {<br>            week -= 4;<br>        }<br>        if(week == flag) week -= 3; //等价于当4年不存在闰年时(上面所有if条件都没触发)<br>        if (week &lt;= 0) week += 7;          //防止week出现负数的必要处理<br>        cout&lt;&lt;week&lt;&lt;endl;              //输出week加换行符<br>    }<br>    return 0;<br>}</cstring></p>
+<p>/<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><em>*</em></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><br>User name: jk170513李绪伟<br>Result: Accepted<br>Take time: 52ms<br>Take Memory: 204KB<br>Submit time: 2017-11-01 07:37:14<br><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><em>**</em></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>/<br>‘’’</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -266,7 +401,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-09T17:36:51+08:00">
                 2017-10-09
@@ -390,7 +525,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-29T20:36:51+08:00">
                 2017-08-29
@@ -520,7 +655,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-25T09:00:35+08:00">
                 2017-08-25
@@ -647,8 +782,8 @@
             
               <a href="/archives">
             
-                <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -661,7 +796,7 @@
             <div class="site-state-item site-state-tags">
               
                 <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-name">Tags</span>
               
             </div>
           
@@ -712,7 +847,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a></div>
 
   <span class="post-meta-divider">|</span>
 
